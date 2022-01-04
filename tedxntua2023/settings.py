@@ -87,7 +87,7 @@ DATABASES = {
         'ENGINE':  'django.db.backends.mysql',
         'NAME': 'tedxntua2022_database',
         'USER': 'root',
-        'PASSWORD': 'geo%pap$0595*',
+        'PASSWORD': '****',
         'HOST': '127.0.0.1',
         'PORT': '3306',
     }
