@@ -80,11 +80,23 @@ WSGI_APPLICATION = 'tedxntua2023.wsgi.application'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
 DATABASES = {
+<<<<<<< HEAD
+    'default': {
+        'ENGINE':  'django.db.backends.mysql',
+        'NAME': 'tedxntua2022_database',
+        'USER': 'root',
+        'PASSWORD': '****',
+        'HOST': '127.0.0.1',
+        'PORT': '3306',
+    }
+}
+=======
     		'default': {
         	'ENGINE': 'django.db.backends.sqlite3',
         	'NAME': BASE_DIR / 'db.sqlite3',
     		}
 	}
+>>>>>>> 8bd7ee0abf4a0115c99fc46a947e06590c694c84
 
 
 # Password validation
