@@ -1,0 +1,41 @@
+* { 
+    background-color: rgb(46, 45, 45);
+    border: solid 2px rgb(0, 55, 128);
+    margin: 0px; 
+}
+.html {
+    width: 100%; 
+    height: 100%;
+}
+.body {
+    width: 100%; 
+    height: 100%;
+}
+
+.header {
+    position: fixed; 
+    display: flex; 
+    width: 100%;
+    /* background-color: rgb(104, 91, 91);  */
+    justify-content: space-between;
+}
+
+.header .image1 .logo img { 
+    width: 50%;
+}
+
+.header-right {
+    display: flex; 
+    margin: 0.3em;
+    justify-content: space-around;
+}
+.header-right a {
+    padding: 0.3em;
+}
+.header-right a:hover {
+    color: red;
+}
+.button {
+    display: flex; 
+    flex-direction: column;
+}

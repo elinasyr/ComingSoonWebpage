@@ -1,13 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
 <html>
 <head>
     <title>TEDxNTUA</title>
+    <!-- <link rel = "stylesheet" src = "main/css/style.css"> -->
+    <link rel ="stylesheet" type="text/css" href="{% static 'main/css/style.css' %}">
+    
 </head>
-
 <body>
-    <p>Hello there!</p>
-    <p>It's me again</p>
-    {% for action in actions %}
-    <p>{{ action.text }}</p>  
-    {% endfor %}
+  <div class = "header"> 
+    <div class = "image1">
+      <a href="#" class="logo"><img src = "{% static 'main/img/tedxntua_logo_blacktext.png' %}" alt="TEDx NTUA Logo"></a>
+    </div>
+    <div class = "header-right">
+      <a href = "#">About</a>
+      <div class = "button">
+        <button type = "button">EN</button>
+        <button type = "button">Dark-mode</button>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
+
+    
+<!-- <div class="header">
+    <div class="header-right">
+      <a href="#about">About</a>
+    </div>
+  </div> -->
+
