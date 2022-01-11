@@ -25,7 +25,7 @@ header {
         padding-left: 0.6em; }
   header nav {
     overflow: hidden; }
-    header nav ul {
+    header nav .nav-menu {
       list-style: none;
       margin: 0;
       padding: 0;
@@ -34,33 +34,34 @@ header {
       display: flex;
       align-items: center;
       justify-content: center; }
-      header nav ul a {
+      header nav .nav-menu a {
         text-decoration: none;
         display: block;
         position: relative;
-        color: #b8b8b8;
+        color: #555454;
         text-transform: uppercase; }
-      header nav ul a:after {
+      header nav .nav-menu a:after {
         content: "";
         width: 0;
         height: 1px;
         position: absolute;
         left: 0;
         bottom: 22px;
-        background: #f0f0f0;
+        background: #444444;
         transition: width .3s linear; }
-      header nav ul a:hover:after {
+      header nav .nav-menu a:hover:after {
         width: 100%; }
-      header nav ul li {
+      header nav .nav-menu li {
         padding: 0.7em;
         height: 70px;
         line-height: 70px;
         display: flex;
         align-items: center; }
-        header nav ul li .buttons {
+        header nav .nav-menu li .buttons {
           display: flex;
-          flex-direction: column;
-          width: fit-content; }
+          flex-direction: column; }
+          header nav .nav-menu li .buttons #but {
+            margin: 0.1em; }
     header nav .hamburger {
       display: none; }
       header nav .hamburger .bar {
@@ -84,11 +85,19 @@ header {
     text-align: center;
     transition: 0.3s;
     box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05); }
-    header .nav-menu nav.active {
-      left: 0; }
+  .nav-menu.active {
+    left: 0;
+    display: flex;
+    align-items: center;
+    margin-top: 1em; }
+    .nav-menu.active li {
+      padding: 0px;
+      line-height: 70px;
+      height: 70px; }
   header nav .hamburger {
     display: block;
-    margin-right: 2em; }
+    margin-right: 2em;
+    cursor: pointer; }
   header nav .hamburger.active .bar:nth-child(2) {
     opacity: 0; }
   header nav .hamburger.active .bar:nth-child(1) {
