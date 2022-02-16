@@ -3,8 +3,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>TEDxNTUA</title>
+    <title>tedxntua</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'main/img/favicon.png' %}">
     <link rel ="stylesheet" type="text/css" href="{% sass_src 'main/css/style.scss' %}">
+    <link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/css/swiper.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
   <header>
@@ -16,8 +20,8 @@
       </div>
       <nav aria-label="Navigation header">
         <ul class = "nav-menu">
-          <li><a href = "" class = "nav-link">Blog</a></li>
-          <li><a href = "" class = "nav-link">About</a></li>
+          <li><a href = "https://blog.tedxntua.com/" class = "nav-link">Blog</a></li>
+          <li><a href = "#about" class = "nav-link">About</a></li>
           <li> 
             <div class = "buttons"> 
               <button type = "button" id = "but"> EN </button>
@@ -33,19 +37,132 @@
       </nav>
     </div>
   </header>
-
-  <section class = "about">
-    <img class = "about_image" src = "{% static 'main/img/happyface.jpg' %}" alt="Happy face">
-    <div class = "text"> 
-      <p><b>Τι είναι το Tedx?</b></p>  
-      <p>Το TED είναι ένας μη κερδοσκοπικός οργανισμός αφοσιωμένος σε Ιδέες που Αξίζει να Διαδοθούν. Ξεκινώντας ως τετραήμερο συνέδριο στην Καλιφόρνια 30 χρόνια πριν, το TED έχει μεγαλώσει για να υποστηρίξει την αποστολή του με πολλαπλές πρωτοβουλίες. Τα δύο ετήσια συνέδρια TED προσκαλούν τους καλύτερους στοχαστές του κόσμου για να μιλήσουν 18 ή λιγότερα λεπτά. Πολλές από αυτές τις ομιλίες προσφέρονται δωρεάν στο κοινό, στο TED.com. Μεταξύ των ατόμων που έχουν υπάρξει ομιλητές του TED είναι και ο Bill Gates, η Jane Goodall, η Elizabeth Gilbert, ο Sir Richard Branson, η Nandan Nilekani, ο Philippe Starck, η Ngozi Okonjo-Iweala, ο Sal Khan και ο Daniel Kahneman.Το ετήσιο συνέδριο TED πραγματοποιείται κάθε άνοιξη στο Βανκούβερ, στη Βρετανική Κολομβία. Οι πρωτοβουλίες του TED σε θέματα κοινωνικής δικτύωσης, περιλαμβάνουν το TED.com, όπου οι νέες ομιλίες δημοσιεύονται καθημερινά, υποτιτλίζονται και εφοδιάζονται με διαδραστικά transcripts από το Open Translation Project, και την εκπαιδευτική πρωτοβουλία TED-Ed. Το TED έχει καθιερώσει το ετήσιο TED Prize, όπου εξέχοντες υποψήφιοι με μια ευχή να αλλάξουν τον κόσμο βοηθούν στη μετατροπή των ευχών του σε πράξεις, του TEDx, το οποίο υποστηρίζει πρόσωπα και ομάδες στη διοργάνωση τοπικών, αυτόνομα οργανωμένων εκδηλώσεων στο στυλ του TED σε ολόκληρο τον κόσμο, καθώς και το TED Fellows Program, που βοηθάει πρωτοπόρους που θέλουν να αλλάξουν τον κόσμο να ενισχύσουν τον αντίκτυπο των αξιοσημείωτων έργων τους, όπως και των δραστηριοτήτων τους.
-      </p>
+  <div class = "main-page">  
+    <div class = "main_boxes"> 
+      <div class = "title">   
+        <div class = "main"> Dialogues</div>
+        <div class='console-container'>
+          <span id='text'></span>
+          <div class='console-underscore' id='console'>&#95;</div>
+        </div>
+      </div> 
+      <div class="blog-slider">
+        <div class="blog-slider__wrp swiper-wrapper">
+          {% for action in actions %} 
+          <div class="blog-slider__item swiper-slide">
+            <div class="blog-slider__img">
+              <a href='http://www.youtube.com'>
+                <img src = "{% static 'main/img/yoke.jpg' %}" alt="TEDx NTUA Logo">
+              </a>
+            </div>
+            <div class="blog-slider__content">
+              <div class="blog-slider__title"> {{action.title}} </div>
+              <span class="blog-slider__date"> {{action.date}}</span>
+              <div class="blog-slider__text"> {{action.text}}</div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+        <div class="blog-slider__pagination"></div>
+      </div>
     </div>
-    <img class = "about_image2" src = "{% static 'main/img/happyface.jpg' %}" alt="Happy face">
 
+    <div class = "main_boxes"> 
+      <div class = "title">   
+        <div class = "main">Past Events</div>
+        <div class='console-container'>
+          <span id='text'></span>
+          <div class='console-underscore' id='console1'>&#95;</div>
+        </div>
+      </div> 
+      <div class="blog-slider">
+        <div class="blog-slider__wrp swiper-wrapper">
+          {% for action in actions %} 
+          <div class="blog-slider__item swiper-slide">
+            <div class="blog-slider__img">
+              <a href="#">
+                <img src = "{% static 'main/img/tedxntua_logo_blacktext.png' %}" alt="TEDx NTUA Logo">
+              </a>
+            </div>
+            <div class="blog-slider__content">
+              <div class="blog-slider__title"> {{action.title}} </div>
+              <span class="blog-slider__date"> {{action.date}}</span>
+              <div class="blog-slider__text"> {{action.text}}</div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+        <div class="blog-slider__pagination"></div>
+      </div>
+    </div>
+   
+    <div class = "main_boxes">
+      <div class = "title">   
+        <div class = "main">Previous Talks</div>
+        <div class='console-container'>
+          <span id='text'></span>
+          <div class='console-underscore' id='console2'>&#95;</div>
+        </div>
+      </div> 
+      <div class="blog-slider">
+        <div class="blog-slider__wrp swiper-wrapper">
+          {% for action in actions %} 
+          <div class="blog-slider__item swiper-slide">
+            <div class="blog-slider__img">
+              <a href="#">
+                <img src = "{% static 'main/img/tedxntua_logo_blacktext.png' %}" alt="TEDx NTUA Logo">
+              </a>
+            </div>
+            <div class="blog-slider__content">
+              <div class="blog-slider__title"> {{action.title}} </div>
+              <span class="blog-slider__date"> {{action.date}}</span>
+              <div class="blog-slider__text"> {{action.text}}</div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+        <div class="blog-slider__pagination"></div>
+      </div>
+    </div>
+  </div>
 
+  <div id="social-container">
+      <a href="https://www.instagram.com/tedxntua/?hl=en" target="_blank">
+          <img src="{% static 'main/img/social-instagram.png' %}">
+      </a>
+      <a href="https://www.facebook.com/tedxntua/" target="_blank">
+          <img src="{% static 'main/img/social-facebook.png' %}">
+      </a>
+      <a href="https://www.linkedin.com/company/tedxntua/" target="_blank">
+          <img src="{% static 'main/img/social-linkedin.png' %}">
+      </a>
+      <a href="https://www.youtube.com/channel/UCVtjgrrBdSPZERmdso2o0dw/featured" target="_blank">
+          <img src="{% static 'main/img/social-youtube.png' %}">
+      </a>
+  </div>
+
+  <section id="about">
+    <div class="about-section" id="about-tedxntua">
+        <p>{{about.0.title}}</p>
+        <p>{{about.0.text}}</p>
+        <p>{{about.0.subtext}}</p>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 col-md-5 about-section" id="about-ted">
+              <p>{{about.1.title}}</p>
+              <p>{{about.1.text}}</p>
+              </div>
+            <div class="col-12 col-md-5 about-section" id="about-tedx">
+              <p>{{about.2.title}}</p>
+              <p>{{about.2.text}}</p>
+            </div>
+        </div>
+    </div>
   </section>
+
 </body>
 <script type="text/javascript" src = "{% static 'main/js/main.js' %}"></script>
 </html>
 
+  

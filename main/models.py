@@ -18,3 +18,7 @@ class Action(models.Model):
 
     event_type = models.CharField(max_length = 20 , choices = EVENT_TYPES, default='Type')  
 
+class About(models.Model): 
+    text = models.TextField()
+    subtext = models.TextField(null=True, blank=True)
+    title = models.CharField(max_length=200)
